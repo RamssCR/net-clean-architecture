@@ -15,7 +15,7 @@ public class TaskRepository : ITaskRepository
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<TaskItem>> GetCompletedTasks()
+    public Task SaveChangesAsync()
     {
         throw new NotImplementedException();
     }
