@@ -1,19 +1,16 @@
 ﻿namespace CleanArch.Domain.ValueObjects;
 
-public readonly record struct TaskTitle()
+public sealed record TaskTitle
 {
-    private string Title { get; }
+    public string Title { get; init; } = string.Empty;
     
-    private TaskTitle(string title) : this()
+    private TaskTitle() { }
+    
+    public TaskTitle(string title)
     {
-        ArgumentException.ThrowIfNullOrEmpty(Title);
-        ArgumentOutOfRangeException.ThrowIfLessThan(Title.Length, 4);
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(Title.Length, 50);
-        Title = title;
+        ArgumentException.ThrowIfNullOrWhiteSpace(title);
+        ArgumentOutOfRangeException.ThrowIfLessThan(title.Length, 4);
+        ArgumentOutOfRangeException.ThrowIfGreaterThan(title.Length, 50);
+        Title = title.Trim();
     }
-    
-    /// <summary>Changes the title value.</summary>
-    /// <param name="title">The value passed by the user.</param>
-    /// <returns>A new record object with the new title value.</returns>
-    public static TaskTitle ChangeTitle(string title) => new(title);
 }
