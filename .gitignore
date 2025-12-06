@@ -1,5 +1,17 @@
+# Visual Studio / Rider / VSCode / builds
 bin/
 obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
+.vs/
+.vscode/
+*.user
+*.suo
+
+# SQLite DB local
+*.db
+app.db
+*.sqlite
+*.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db
