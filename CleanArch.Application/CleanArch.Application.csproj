@@ -4,6 +4,12 @@
     <ProjectReference Include="..\CleanArch.Domain\CleanArch.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\Task\CompleteTask\" />
+    <Folder Include="UseCases\Task\GetPendingTasks\" />
+    <Folder Include="UseCases\Task\GetTaskById\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
