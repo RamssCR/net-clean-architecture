@@ -5,9 +5,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Task\CompleteTask\" />
-    <Folder Include="UseCases\Task\GetPendingTasks\" />
-    <Folder Include="UseCases\Task\GetTaskById\" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
   </ItemGroup>
 
   <PropertyGroup>
