@@ -1,4 +1,8 @@
 ﻿namespace CleanArch.Application.Dtos.Task.CreateTask;
-using Domain.ValueObjects;
 
-public record CreateTaskResponse(Guid Id, TaskTitle Title, bool IsCompleted);
+public record CreateTaskResponse(
+    Guid Id,
+    string Title,
+    string? Description,
+    bool IsCompleted
+);
