@@ -8,6 +8,8 @@ public class TaskItem : BaseEntity
     public TaskTitle Title { get; private set; }
     public string? Description { get; private set; }
     public bool IsCompleted { get; private set; }
+    
+    private TaskItem() {}
 
     public TaskItem(TaskTitle title, string? description = null)
     {
