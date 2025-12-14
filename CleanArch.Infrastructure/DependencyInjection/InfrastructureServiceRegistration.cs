@@ -21,8 +21,12 @@ public static class InfrastructureServiceRegistration
         IConfiguration configuration
     )
     {
-        var connectionString = configuration.GetConnectionString("DefaultConnection");
-        services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
+        var connectionString = configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
+        var basePath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\"));
+        var connection = Path.Combine(basePath, connectionString);
+        
+        services
+            .AddDbContext<AppDbContext>(options => options.UseSqlite($"Data Source={connection}"));
 
         services.AddScoped<ITaskRepository, TaskRepository>();
         return services;

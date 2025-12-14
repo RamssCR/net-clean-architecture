@@ -13,4 +13,6 @@ public sealed record TaskTitle
         ArgumentOutOfRangeException.ThrowIfGreaterThan(title.Length, 50);
         Title = title.Trim();
     }
+    
+    public override string ToString() => Title;
 }
